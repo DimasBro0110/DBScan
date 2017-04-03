@@ -34,7 +34,7 @@ public class DBScanInstance {
         if(this.customDataSet != null){
             long timeStart = System.currentTimeMillis();
             this.dbScanInstance = new DBSCANClusterer<DBScanPoint>(
-                    this.pointRadius, this.amountOfPointsInCluster, this.distanceMeasure);
+                    0.021, 120, this.distanceMeasure);
             List<Cluster<DBScanPoint>> resultOfClustering =  this.dbScanInstance.cluster(this.customDataSet);
             long stopTime = System.currentTimeMillis();
             logger.log(Level.INFO,

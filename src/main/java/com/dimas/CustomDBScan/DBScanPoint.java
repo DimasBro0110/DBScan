@@ -7,19 +7,20 @@ import org.apache.commons.math3.ml.clustering.Clusterable;
  */
 public class DBScanPoint implements Clusterable {
 
-    private String textMessage;
     private double[] textFeatures;
+    private CustomPoint point;
 
-    public DBScanPoint(String text, double[] features){
-        this.textMessage = text;
-        this.textFeatures = features;
+    public DBScanPoint(CustomPoint point){
+        this.point = point;
+        this.textFeatures = point.getFeaturesSms();
     }
 
     public double[] getPoint() {
         return this.textFeatures;
     }
 
-    public String getTextMessage() {
-        return textMessage;
+    public CustomPoint getPointStructure(){
+        return this.point;
     }
+
 }
